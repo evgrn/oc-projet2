@@ -1,0 +1,746 @@
+/*
+Theme Name: Ville de Strasbourg
+Theme URI:
+Author: Camille Maillet
+Author URI: https://camille-maillet.fr
+Description: Thème pour le projet 2 du parcours Développeur Web Junior d'OpenClassrooms
+Version: 1.0
+Licence: GNU General Public Licence or Later
+Tags: html5, css3, ville, tourisme, activités
+*/
+
+/*
+*********** Index **********
+= GENERAL 
+  ** Titres
+  ** Liens
+  ** Boutons
+  ** Containers
+  ** Formulaires
+== HEADER
+== HERO
+== ACCUEIL
+  ** Ecran de titre
+  ** Contenu Accueil
+  ** Listing Pages ( primary)
+    *** Hovers Pages
+    *** Descriptions
+  ** Sidebar - Last News ( secondary)
+  ** Pre-footer
+  ** Footer Accueil
+== ARTICLES
+== PAGE
+== SINGLE
+== ACTIVITES DU MOIS
+  ** Tableau Activités du mois
+  ** Formulaire d'inscription aux activités
+== CONTACT
+== FOOTER
+== 404
+== MENTIONS LEGALES
+
+
+****************************
+*/
+
+
+
+
+
+
+
+
+
+/*################################## GENERAL #################################*/
+html{
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body{
+font-family: Arial;
+margin-top: 40px;
+overflow-x: hidden;
+padding-bottom: 40px;
+}
+
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+
+.clear, .clear::after{
+  content: '';
+  clear: both;
+  display: block;
+}
+
+
+/*Titres*/
+h1{
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h1 a{
+  text-decoration: none;
+  color: #fff;
+}
+
+h3{
+  font-size: 1.5rem;
+}
+
+
+/*Liens*/
+a{
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+  font-style: italic;
+}
+
+a:hover{
+  color: dimgray;
+}
+
+
+/*Boutons*/
+button:hover{
+  filter: brightness(110%);
+}
+
+section button{
+  padding: 10px;
+  background: #5EA2CA;
+  color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+
+/*Containers*/
+.container{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.container-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+/*Formulaires*/
+section form{
+  width: 100%;
+}
+
+section form fieldset{
+  padding: 0.35em 0.75em 0.625em;
+  margin: 10px;
+  border: 1px solid lightgray;
+  background-color: rgba(250, 250, 250, 0.7);
+}
+
+section form fieldset label{
+  display: block;
+}
+
+section form fieldset label input,
+section form fieldset label textarea,
+section form fieldset label select{
+  margin-top: 10px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  font-family: arial;
+  text-align: center;
+  width: 250px;
+}
+
+section form fieldset label input[type='checkbox']{
+  width: auto;
+}
+
+section form fieldset label textarea{
+  width: 90%;
+  text-align: left;
+  padding: 10px;
+}
+
+section form input[type="submit"]{
+  padding: 10px;
+  background: #5EA2CA;
+  color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 97.5%;
+  margin: 0 auto;
+  display: block;
+  transition: all 0.5s ease;
+}
+
+section form input[type="submit"]:hover{
+  filter: brightness(110%);
+}
+
+section form .aide-formulaire{
+  font-size: 0.9rem;
+  background-color: rgb(235, 235, 235);
+  width: 200px;
+  margin: 5px auto;
+  border-radius: 5px;
+  padding: 3px;
+  color: dimgray;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+
+/*################################## HEADER ##################################*/
+header{
+  background-color: rgba(250, 250, 250, 0.9);
+  text-align: center;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 1px 1px 1px lightgray;
+}
+
+header .mobile-menu{
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  height: 40px;
+}
+
+header nav{
+  margin-top: -15px;
+  display: none;
+}
+
+header nav ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+header nav ul li{
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  border-top: 1px solid #fff;
+}
+
+header nav ul li a{
+  color: #000;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+}
+
+header nav ul li a i{
+  margin-right: 5px;
+}
+
+header nav ul .searchbox{
+  padding: 10px 0 0 0;
+}
+
+
+/*################################## HERO ####################################*/
+div.hero{
+  height: 150px;
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  margin-bottom: 20px;
+}
+
+.hero h1{
+  z-index: 2;
+}
+
+div.hero-overlay{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+div.hero .credit-photo{
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  opacity: 0.5;
+  font-size: 0.6rem;
+  z-index: 2;
+}
+
+
+
+/*################################# ACCUEUIL #################################*/
+body.home{
+  margin-top: 0px;
+  padding-bottom: 40px;
+}
+
+.home .container{
+  text-align: left;
+  max-width: 2000px;
+}
+
+body.home article{
+  width: auto;
+}
+
+/*Ecran de titre*/
+section.home-title-container{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+background-attachment: fixed;
+background-position: center top;
+background-size: cover;
+position: relative;
+}
+
+section.home-title-container h1{
+text-transform: uppercase;
+font-size: 2rem;
+color: rgba(250, 250, 250, 0.95);
+text-align: center;
+}
+
+.home-title-container-overlay{
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+background-color: #459AC2;
+opacity: 0;
+}
+
+/*Contenu Accueil*/
+section.home-content{
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+}
+
+section.home-content .primary,
+section.home-content .secondary{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section.home-content article{
+  width: 100%;
+}
+
+
+/*Listitg pages (.primary)*/
+section.home-content .primary{
+  border-bottom: 1px solid lightgray;
+}
+
+section.home-content .primary .home-pages p.indication{
+  display: none;
+}
+
+
+/**Hovers pages*/
+section.home-content .primary .home-pages .home-pages-list{
+  display: none;
+}
+
+
+/**Descriptions*/
+.pages-list-ele-description {
+  margin-bottom: 20px;
+  background-size: cover;
+  height: 100px;
+  position: relative;
+}
+
+.pages-list-ele-description-content{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255,0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.pages-list-ele-description-content h3{
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.pages-list-ele-description-content button{
+  color: dimgray;
+  background-color: rgb(250, 250, 250);
+  padding: 3px 0 0 0;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  width: 70px;
+}
+
+
+/*Sidebar - Last News ( .secondary)*/
+section.home-content .secondary{
+  width: 300px;
+  margin: 0 auto;
+}
+
+section.home-content .secondary .last-news{
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.home-content .secondary .last-news h3{
+  text-align: center;
+}
+
+section.home-content .secondary article .article-info{
+  text-align: center;
+}
+
+
+/*Pre-footer*/
+body.home section.pre-footer{
+  display: none;
+}
+
+/*Footer Accueil*/
+.home footer{
+  margin-top: 0;
+}
+
+
+/*################################# ARTICLES #################################*/
+article{
+  margin-bottom: 25px;
+  padding: 0;
+  padding-bottom: 20px;
+  background-color: rgba(250, 250, 250, 1);
+  border-bottom: 1px solid lightgray;
+  width: 300px;
+  padding: 0 10px;
+}
+
+article .featured-image{
+  position: relative;
+  overflow: hidden;
+}
+
+article .featured-image img{
+  width: 100%;
+  height: auto;
+}
+
+article .featured-image .article-info{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: rgba(250, 250, 250, 0.5);
+  margin: 0 auto;
+  padding: 5px;
+  padding-bottom: 5px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+article .featured-image .article-info h2{
+  margin: 0;
+  color: dimgray;
+}
+
+article button.readmore{
+  display: none;
+}
+
+article .featured-image:hover .article-info{
+  top: 0;
+}
+
+article .article-content{
+  text-align: left;
+  padding: 0 10px;
+}
+
+article .article-content p {
+  height: auto;
+}
+article .article-content h4{
+  font-style: italic;
+  font-size: 1.2rem;
+  color: gray;
+  font-weight: lighter;
+}
+
+article .post-information{
+  text-align: right;
+  background-color: rgba(250, 250, 250, 0.9);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+article .post-information .author{
+  font-weight: bold;
+  color: gray;
+}
+article .post-information .photo-author{
+  color: gray;
+}
+
+
+/*################################# PAGE #################################*/
+body.page .contenu-page{
+  width: 100%;
+  text-align: center;
+  color: gray;
+  font-style: italic;
+  font-weight: bold;
+  padding: 20px 5px;
+  margin-bottom: 20px;
+  background-color: rgba( 250, 250, 250, 1);
+}
+
+
+/*################################# SINGLE #################################*/
+body.single .container{
+  text-align: left;
+}
+
+body.single article{
+  width: 100%;
+}
+
+body.single article .content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.single .featured-image{
+  width: 70%;
+  margin: 30px;
+}
+
+body.single .article-content{
+  padding: 8px;
+}
+
+
+/*################################ ACTIVITES DU MOIS #########################*/
+
+/*Tableau activités du mois*/
+body.page-id-11 table.evenements{
+  margin: 0 auto;
+  border: 1px solid lightgray;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+body.page-id-11 table.evenements th{
+  background-color: rgb(240, 240, 240);
+}
+
+body.page-id-11 table.evenements tr:nth-child(even) {
+    background-color: rgb(250, 250, 250);
+}
+body.page-id-11 table.evenements tr{
+  height: 60px;
+}
+
+body.page-id-11 table.evenements td{
+  font-size: 0.9rem;
+
+}
+
+body.page-id-11 table.evenements td.evenements-date{
+  text-align: center;
+  min-width: 90px;
+}
+
+body.page-id-11 table.evenements tr th,
+body.page-id-11 table.evenements tr td{
+  border: 1px solid lightgray;
+  padding-left: 5px;
+}
+
+body.page-id-11 table.evenements tr th{
+  color: dimgray;
+}
+
+body.page-id-11 table.evenements button.s-inscrire{
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+}
+
+body.page-id-11 table.evenements .evenements-photo,
+body.page-id-11 table.evenements .evenements-description,
+body.page-id-11 table.evenements .evenements-adresse{
+  display: none;
+}
+
+
+/*Formulaire d'inscription aux activités*/
+body.page-id-11 section.inscription-activites{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+body.page-id-11 section.inscription-activites form{
+  border: 1px solid lightgray;
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 90%;
+}
+
+body.page-id-11 section.inscription-activites form fieldset{
+  background-color: transparent;
+  border: 1px solid lightgray;
+  margin: 0 0 20px 0;
+}
+
+body.page-id-11 section.inscription-activites form fieldset label{
+  margin-top: 10px;
+}
+
+body.page-id-11 section.inscription-activites form fieldset input{
+  margin-bottom: 10px;
+}
+
+body.page-id-11 section.inscription-activites form fieldset input[type="submit"]{
+  width: 110px;
+}
+
+body.page-id-11 section.inscription-activites form  button.annuler-inscription-evenement{
+  background-color: firebrick;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  opacity: 0.7;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+
+/*################################## CONTACT #################################*/
+body.page-id-13 h2{
+  margin: 40px;
+}
+
+
+/*################################## FOOTER ##################################*/
+footer{
+  clear: both;
+  background-color: #fff;
+  border-top: 1px solid dimgray;
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  font-size: 0.8rem;
+}
+footer .public{
+  margin: 15px auto;
+  width: auto;
+  text-align: center;
+  float: left;
+  padding-left: 5px
+}
+
+footer .admin{
+  float: right;
+  margin-right: 10px;
+  margin-top: 14px;
+}
+
+footer .admin .admin-text{
+  display: none;
+}
+
+footer .admin i{
+  background-color: gray;
+  border-radius: 100%;
+  padding: 2px;
+  color: white;
+}
+
+
+/*################################## 404 ##################################*/
+.not-found.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.not-found p{
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: lightgray;
+  background-color: rgba(250, 250, 250, 0.9);
+  padding: 20px;
+}
+
+/*################################## MENTIONS LÉGALES ########################*/
+
+.page-id-239 .container{
+  padding: 0 10px;
+}
+.align-left{
+  text-align: left;
+}
+
+footer a{
+  font-style: normal;
+}

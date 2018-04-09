@@ -1,0 +1,515 @@
+/*
+Theme Name: Ville de Strasbourg
+Theme URI:
+Author: Camille Maillet
+Author URI: https://camille-maillet.fr
+Description: Thème pour le projet 2 du parcours Développeur Web Junior d'OpenClassrooms
+Version: 1.0
+Licence: GNU General Public Licence or Later
+Tags: html5, css3, ville, tourisme, activités
+*/
+html{
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+body{
+font-family: Arial;
+margin-bottom: 40px;
+margin-top: 60px;
+overflow-x: hidden;
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+h1{
+  font-size: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+h1 a{
+  text-decoration: none;
+  color: #fff;
+}
+h2{
+
+}
+h3{
+  font-size: 1.5rem;
+}
+h4{
+  font-size: 24rem;
+}
+.clear,
+.clear::after{
+  content:'';
+  clear: both;
+  display: block;
+}
+.container{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+
+/**HEADER / MENU**/
+header{
+  background-color: rgba(250, 250, 250, 0.9);
+  text-align: center;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 1px 1px 1px lightgray;
+}
+header .mobile-menu{
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+header nav{
+  margin-top: -15px;
+  display: none;
+}
+header nav ul{
+  list-style: none;
+  padding-left: 0;
+}
+header nav ul li{
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  border-top: 1px solid #fff;
+}
+
+header nav ul li a{
+  color: #000;
+  text-decoration: none;
+}
+header nav ul li a i{
+  margin-right: 5px;
+}
+header nav ul .searchbox{
+  padding: 10px 0 0 0;
+}
+
+@media only screen and (min-width: 768px){
+  header{
+      height: 60px;
+      margin: 0;
+  }
+  header .container{
+    display: inline-block;
+    text-align: center;
+  }
+  header .mobile-menu{
+    display: none;
+  }
+  header nav{
+    display: block;
+    text-align: center;
+    margin-top: 0;
+
+  }
+  header nav ul li{
+    display: inline;
+    padding: 0 10px 0 10px;
+    border: none!important;
+  }
+  header nav ul li a:hover{
+    color: dimgray;
+  }
+  header nav ul .searchbox{
+    padding: 10px 0 10px 0;
+  }
+  header nav ul li form.searchform{
+    display: inline-block;
+  }
+  header nav ul li form.searchform input{
+    background-color: rgba(250, 250, 250, 0.8);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding-left: 5px;
+    background-color: rgba(250, 250, 250, 0.8);
+    text-align: center;
+    width: 120px;
+  }
+  header nav ul li form.searchform button{
+    border: none;
+    background-color: rgba(250, 250, 250, 0);
+    cursor: pointer;
+  }
+
+
+}
+/*HERO*/
+div.hero{
+  height: 300px;
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  margin-bottom: 50px;
+}
+div.hero-overlay{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.hero h1{
+  z-index: 2;
+}
+
+
+/*Accueil*/
+body.home{
+  margin-top: 0px;
+}
+.home .container{
+  text-align: left;
+  max-width: 2000px;
+}
+div.home-title-container{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e1/Cath%C3%A9drale_Notre-Dame_de_Strasbourg_ao%C3%BBt_2014.jpg");
+background-attachment: fixed;
+background-position: center top;
+background-size: cover;
+position: relative;
+
+}
+div.home-title-container h1{
+text-transform: uppercase;
+font-size: 2rem;
+color: rgba(250, 250, 250, 0.95);
+text-align: center;
+}
+.home-title-container-overlay{
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+background-color: #459AC2;
+opacity: 0;
+}
+div.home-featured{
+display: none;
+}
+
+div.home-content{
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  margin-top: -4px;
+  z-index: 1;
+
+}
+div.home-content .primary,
+div.home-content .secondary{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media only screen and (min-width: 762px){
+  div.home-title-container h1{
+    font-size: 5rem;
+  }
+  div.home-featured{
+    display: block;
+    width: 100%;
+    z-index: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-position: 0px center;
+
+  }
+
+  div.home-content .primary{
+    float: left;
+    width: 70%;
+  }
+  div.home-content .secondary{
+    float: right;
+    width: 30%;
+  }
+  div.home-content .primary,
+  div.home-content .secondary{
+    display: block;
+  }
+}
+
+/*Sidebar Last News*/
+.secondary a{
+  text-decoration: none;
+  color: black;
+}
+.secondary .last-news{
+  width: 300px;
+}
+.sidebar-article.featured{
+  position: relative;
+  height: 200px;
+}
+.sidebar-article.featured img{
+  position: absolute;
+  top: 0;
+}
+.sidebar-article.featured h3{
+  position: absolute;
+  bottom: 0px;
+  margin: 0;
+  background-color: rgba(250, 250, 250, 0.9);
+  font-size: 1.2rem;
+  width: 100%;
+  padding-top: 8px;
+  text-align: center;
+  color: dimgray;
+}
+.last-news .post-information{
+  background-color: rgba(250, 250, 250, 1);
+  text-align: right;
+}
+.post-information .author{
+  font-weight: bold;
+  color: dimgray;
+}
+.post-information .date{
+  color: dimgray;
+  font-style: italic;
+}
+
+
+/*Actualités*/
+body.blog{
+  margin-top: 0;
+}
+
+
+
+.blog article .featured-image,
+.category article .featured-image,
+.page-id-9 article .featured-image,
+.page-child article .featured-image{
+  position: relative;
+  overflow: hidden;
+}
+
+.blog article img,
+.category article img,
+.page-id-9 article img,
+.page-child article img{
+  width: 100%;
+  height: auto;
+}
+.blog .featured-image .article-info,
+.category .featured-image .article-info,
+.page-id-9 .featured-image .article-info,
+.page-child .featured-image .article-info{
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  background-color: rgba(250, 250, 250, 0.7);
+  margin: 0 auto;
+  padding: 5px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  transition: all 0.5s ease;
+}
+.blog article .featured-image .article-info h2,
+.category article .featured-image .article-info h2,
+.page-id-9 article .featured-image .article-info h2,
+.page-child article .featured-image .article-info h2{
+  margin: 0;
+  color: dimgray;
+}
+.blog article .featured-image .article-info button,
+.category article .featured-image .article-info button,
+.page-id-9 article .featured-image .article-info button,
+.page-child article .featured-image .article-info button{
+  padding: 10px;
+  background: #5EA2CA;
+  color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.blog article .featured-image .article-info button:hover,
+.category article .featured-image .article-info button:hover,
+.page-id-9 article .featured-image .article-info button:hover,
+.page-child article .featured-image .article-info button:hover{
+  filter: brightness(110%);
+}
+.blog article .featured-image:hover .article-info,
+.category article .featured-image:hover .article-info,
+.page-id-9 article .featured-image:hover .article-info,
+.page-child article .featured-image:hover .article-info{
+  top: 0;
+}
+.blog .article-content,
+.category .article-content,
+.page-id-9 .article-content,
+.page-child article-content{
+  text-align: left;
+}
+.blog .post-information,
+.category .post-information,
+.page-id-9 .post-information,
+.page-child .post-information{
+  text-align: right;
+  background-color: rgba(250, 250, 250, 0.9);
+}
+@media only screen and (min-width: 768px){
+  .blog article,
+  .category article,
+  .page-child article{
+    width: 30%;
+    display: inline-block;
+    padding: 7px;
+  }
+
+}
+
+
+/*SINGLE*/
+
+.single .container{
+  text-align: left;
+}
+.single .article-content{
+
+  padding: 8px;
+}
+
+
+@media only screen and (min-width: 768px){
+  .single .post-information{
+    text-align: right;
+    padding-right: 20px;
+  }
+  .single .content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .single .featured-image{
+    width: 30%;
+    padding: 0 20px;
+
+  }
+  .single .article-content{
+    width: 55%;
+    padding: 0 20px;
+
+  }
+}
+/*CONTACT*/
+.page-id-13 h2{
+  margin: 40px;
+}
+section form{
+  width: 50%;
+  margin: 0 auto;
+}
+section form fieldset{
+  padding: 0.35em 0.75em 0.625em;
+  margin: 10px;
+  border: 1px solid lightgray;
+  background-color: rgba(250, 250, 250, 0.7);
+}
+section form fieldset label{
+  display: block;
+}
+section form fieldset label input,
+section form fieldset label textarea,
+section form fieldset label select{
+  margin-top: 10px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  font-family: arial;
+  text-align: center;
+}
+section form fieldset label textarea{
+  width: 90%;
+  text-align: left;
+  padding: 10px;
+}
+
+section form input[type="submit"]{
+  padding: 10px;
+  background: #5EA2CA;
+  color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 97.5%;
+  margin: 0 auto;
+  display: block;
+  transition: all 0.5s ease;
+}
+section form input[type="submit"]:hover{
+  filter: brightness(110%);
+}
+
+/*CATEGORY*/
+.page-id-9 article{
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  background-color: rgba(250, 250, 250, 0.8);
+}
+@media only screen and (min-width: 768px){
+  .page-id-9 article{
+    width: 40%;
+    display: inline-block;
+    padding: 7px;
+    margin-bottom: 0;
+  }
+}
+
+/*EVENEMENTS DU MOIS*/
+.page-id-11 table.evenements{
+  margin: 0 auto;
+  width: 60%;
+  border: 1px solid lightgray;
+}
+
+
+/*FOOTER*/
+footer{
+  clear: both;
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid dimgray;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+/*CLASSES  JS*/
+.fixed-top{
+  position: fixed;
+  top: 0;
+}

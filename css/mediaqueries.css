@@ -1,0 +1,428 @@
+/*
+*********** Index **********
+= GENERAL 
+== HEADER
+== HERO
+== ACCUEIL
+  ** Ecran de titre
+  ** Contenu Accueil
+  ** Listing Pages ( primary)
+    *** Hovers Pages
+    *** Descriptions
+  ** Sidebar - Last News ( secondary)
+  ** Pre-footer
+== ARTICLES
+== PAGE
+== SINGLE
+== PLUS D'INFOS
+== ACTIVITES DU MOIS
+  ** Tableau Activités du mois
+  ** Formulaire d'inscription aux activités
+== FOOTER
+
+
+****************************
+*/
+
+
+
+
+/*################################## GENERAL #################################*/
+@media only screen and (min-width: 768px) and (orientation: landscape){
+  body{
+    margin-top: 60px;
+  }
+
+  h1{
+    font-size: 5rem;
+  }
+
+  section{
+    border-bottom: none;
+  }
+
+  section form{
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/*################################## HEADER #################################*/
+@media only screen and (min-width: 768px) and (orientation: landscape){
+  header{
+      height: 60px;
+      margin: 0;
+  }
+
+  header .container{
+    display: inline-block;
+    text-align: center;
+  }
+
+  header .mobile-menu{
+    display: none;
+  }
+
+  header nav{
+    display: block;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  header nav ul li{
+    display: inline;
+    padding: 0 10px 0 10px;
+    border: none!important;
+  }
+
+  header nav ul li a:hover{
+    color: dimgray;
+  }
+
+  header nav ul .searchbox{
+    padding: 10px 0 10px 0;
+  }
+
+  header nav ul li form.searchform{
+    display: inline-block;
+  }
+
+  header nav ul li form.searchform input{
+    background-color: rgba(250, 250, 250, 0.8);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding-left: 5px;
+    background-color: rgba(250, 250, 250, 0.8);
+    text-align: center;
+    width: 120px;
+  }
+
+  header nav ul li form.searchform button{
+    border: none;
+    background-color: rgba(250, 250, 250, 0);
+    cursor: pointer;
+  }
+}
+
+
+/*################################## HERO #################################*/
+@media only screen and (min-width: 768px) and (orientation: landscape){
+  div.hero{
+    height: 300px;
+    margin-bottom: 50px;
+  }
+
+  div.hero .credit-photo{
+      font-size: 1rem;
+  }
+}
+
+
+/*################################## ACCUEIL #################################*/
+@media only screen and (min-width: 768px){
+
+  /*Ecran de titre*/
+  section.home-title-container h1{
+    font-size: 5rem;
+  }
+
+  /*Contenu Accueil*/
+  section.home-content{
+    padding: 20px;
+    padding-top: 90px;
+  }
+
+  section.home-content .primary,
+  section.home-content .secondary{
+    display: block;
+  }
+
+  section.home-content .primary article{
+    width: 100%;
+  }
+
+  section.home-content .secondary article{
+    width: 80%;
+  }
+
+}
+
+
+/*Listitg pages (.primary)*/
+@media only screen and (min-width: 768px) and (orientation: landscape){
+  section.home-content .primary{
+    float: left;
+    width: 50%;
+    padding-bottom: 90px;
+    border-bottom: none;
+  }
+}
+
+@media only screen and (min-width: 992px) and (orientation: landscape){
+  .home-pages {
+    background-color: rgba(250, 250, 250, 0.5);
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    height: auto;
+  }
+
+}
+
+
+/**Hovers pages*/
+@media only screen and (min-width: 992px) and (orientation: landscape){
+  section.home-content .primary .home-pages .home-pages-list{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    padding: 10px;
+  }
+
+  section.home-content .primary .home-pages .home-pages-list .pages-list-ele{
+    width: 20%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  section.home-content .primary .home-pages .home-pages-list .pages-list-ele img{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid white;
+  }
+
+  section.home-content .primary .home-pages .home-pages-list .pages-list-ele .pages-list-ele-more{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 65%;
+    background-color: rgba(250, 250, 250, 0.7);
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section.home-content .primary .home-pages .home-pages-list .pages-list-ele .pages-list-ele-more i{
+    margin-top: -100%;
+    background-color: white;
+    display: block;
+    border-radius: 100%;
+    padding: 0.5px 1.5px;
+    border: 2px solid white;
+    color: dimgray;
+    transition: all 0.7s ease;
+    opacity: 0.4;
+  }
+
+  section.home-content .primary .home-pages .home-pages-list .pages-list-ele:hover .pages-list-ele-more{
+    top: 0;
+    align-items: center;
+  }
+
+  section.home-content .primary .home-pages .home-pages-list .pages-list-ele:hover .pages-list-ele-more i{
+    margin-top: 0;
+  }
+}
+
+
+/**descriptions*/
+@media only screen and (min-width: 992px) and (orientation: landscape){
+  .home-pages .pages-list-description{
+    padding: 0 0 10px 20px;
+    background-size: cover;
+    height: 130px;
+    padding: 10px;
+    transition: all 0.5s ease;
+    display: none;
+  }
+
+  .pages-list-ele-description{
+    display: none;
+  }
+
+  .home-pages .pages-list-description h3{
+      color: dimgray;
+      font-size: 1.2rem;
+      padding-top: 10px;
+  }
+
+  .home-pages .pages-list-description p{
+    color: dimgray;
+    font-size: 0.95rem;
+  }
+}
+
+/*Sidebar - Last News (.secondary)*/
+@media only screen and (min-width: 768px) and (orientation: landscape){
+  section.home-content .secondary{
+    float: right;
+    width: 40%;
+  }
+  section.home-content .secondary .last-news{
+    width: 80%;
+  }
+}
+
+
+/*Pre-footer*/
+@media only screen and (min-width: 992px) and (orientation: landscape){
+  body.home section.pre-footer{
+    height: 400px;
+    width: 100%;
+    background-position: fixed;
+    background-position: center center;
+    background-size: 120%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  body.home section.pre-footer p.hero-text{
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    text-align: center;
+    transition: all 1s ease;
+  }
+}
+
+
+/*################################# ARTICLES #################################*/
+@media only screen and (min-width: 768px) and (orientation: landscape){
+  article{
+    width: 50%;
+    display: inline-block;
+    margin: 20px;
+  }
+  article button.readmore.readmore{
+      float: right;
+      padding: 2px 10px;
+      border-radius: 3px;
+      display: inline-block;
+      font-size: 1.1rem;
+      margin: 5px 0 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (orientation: landscape){
+  article{
+      width: 300px;
+      padding: 7px;
+      background-color: transparent;
+      border-bottom: none;
+    }
+
+  article .featured-image .article-info{
+      top: 60%;
+      transition: all 0.5s ease;
+    }
+
+  article .article-content{
+      padding: 0;
+  }
+
+}
+
+
+/*################################# PAGE #################################*/
+@media only screen and (min-width: 768px) and (orientation: landscape){
+  body.page .contenu-page{
+    padding: 20px 20%;
+  }
+}
+
+
+/*################################# SINGLE #################################*/
+
+@media only screen and (min-width: 768px) and (orientation: landscape){
+  body.single article .post-information{
+    padding-right: 20px;
+  }
+
+  body.single article .content{
+    display: block;
+  }
+
+  body.single article .featured-image{
+    width: 30%;
+    padding: 0 20px;
+    float: left;
+    margin: 0;
+  }
+
+  body.single article .article-content{
+    padding: 0 20px;
+  }
+}
+
+
+/*################################## PLUS D'INFOS ############################*/
+@media only screen and (min-width: 992px) and (orientation: landscape){
+  .page-id-9 article{
+    width: 40%;
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+
+
+/*################################ ACTIVITES DU MOIS #########################*/
+
+/*Tableau activités du mois*/
+@media only screen and (min-width: 768px) and (orientation: landscape){
+  body.page-id-11 table.evenements{
+    width: 90%;
+  }
+
+  body.page-id-11 table.evenements tr{
+    height: auto;
+  }
+
+  body.page-id-11 table.evenements:not(th) tr:hover{
+    color: white;
+    background-color: lightgray;
+  }
+
+  body.page-id-11 table.evenements tr:hover td{
+    border: 1px solid white;
+  }
+
+  body.page-id-11 table.evenements .evenements-photo,
+  body.page-id-11 table.evenements .evenements-description,
+  body.page-id-11 table.evenements .evenements-adresse{
+    display: table-cell;
+  }
+
+
+  /*Formulaire d'inscription aux activités*/
+  body.page-id-11 section.inscription-activites form{
+    width: 50%;
+  }
+}
+
+
+/*################################## FOOTER ##################################*/
+@media only screen and (min-width: 768px) and (orientation: landscape){
+  footer{
+    margin-top: 60px;
+  }
+
+  footer .public{
+    float: none;
+    width: 300px;
+  }
+
+  footer .admin{
+    margin-top: -31px;
+  }
+
+  footer .admin .admin-text{
+    display: inline;
+  }
+}
